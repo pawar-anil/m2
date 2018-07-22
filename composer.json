@@ -2,7 +2,7 @@
     "name": "custom/module-catalog",
     "description": "Custom Catalog Module",
     "require": {
-        "magento/framework": "100.1.*"
+        "magento/framework": "101.0.*"
     },
     "type": "magento2-module",
     "version": "1.0.0",
