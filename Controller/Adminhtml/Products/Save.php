@@ -43,11 +43,11 @@ class Save extends Products
             }
          }
          $formData = $this->getRequest()->getPostValue();
-          print_r($formData);
+          //print_r($formData);
          if ($formData['entity_id']=='') {
             unset($formData['entity_id']);
          }
-         print_r($formData);
+         //print_r($formData);
          $productsModel->setData($formData);
          //print_r($productsModel->getData());die;
 
