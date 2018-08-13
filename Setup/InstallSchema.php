@@ -11,8 +11,14 @@ class InstallSchema implements InstallSchemaInterface{
 		->newTable($setup->getTable('custom_catalog_products'))
 		->addColumn(
 			'entity_id',
-			\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,null,
+			\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,null,
 			['identity' => true, 'unsigned' => true, 'nullable' =>false, 'primary' => true],
+			'Entity ID'
+		)
+		->addColumn(
+			'product_id',
+			\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,100,
+			['identity' => false, 'unsigned' => true, 'nullable' =>false, 'primary' => true],
 			'Entity ID'
 		)
 		->addColumn(
@@ -25,14 +31,14 @@ class InstallSchema implements InstallSchemaInterface{
 		->addColumn(
 			'vpn',
 			\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-			64,
+			100,
 			[],
 			'Vendor Product Number'
 		)
 		->addColumn(
 			'sku',
 			\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-			64,
+			100,
 			[],
 			'SKU'
 		)
@@ -43,6 +49,16 @@ class InstallSchema implements InstallSchemaInterface{
 				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
 			),
 			['entity_id'],
+			['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE]
+		)
+
+		->addIndex(
+			$setup->getIdxName(
+				'custom_catalog_products',
+				['product_id'],
+				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
+			),
+			['product_id'],
 			['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE]
 		)
 

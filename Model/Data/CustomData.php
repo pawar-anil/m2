@@ -33,24 +33,24 @@ class CustomData extends \Magento\Framework\Api\AbstractExtensibleObject impleme
 	}
 
 	/**
-	 * Get Entity Id.
+	 * Get Product Id.
 	 *
 	 * @return int|null
 	 */
-	public function getEntityId()
+	public function getProductId()
 	{
-		return $this->_get(self::ENTITY_ID);
+		return $this->_get(self::PRODUCT_ID);
 	}
 
 	/**
-	 * Set Entity Id.
+	 * Set Product Id.
 	 *
-	 * @param int $entityId
+	 * @param String $product_id
 	 * @return $this
 	 */
-	public function setEntityId($entityId = null)
+	public function setProductId($product_id = null)
 	{
-		return $this->setData(self::ENTITY_ID, $entityId);
+		return $this->setData(self::PRODUCT_ID, $product_id);
 	}
 
 

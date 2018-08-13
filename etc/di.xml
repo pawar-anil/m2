@@ -13,8 +13,6 @@
             </argument>
         </arguments>
     </type>
-    <preference for="Custom\Catalog\Api\ProductsInterface" type="Custom\Catalog\Model\Products" />
-
     <preference for="Custom\Catalog\Api\CustomRepositoryInterface" type="Custom\Catalog\Model\CustomRepository"/>
     <preference for="Custom\Catalog\Api\Data\CustomDataInterface" type="Custom\Catalog\Model\Data\CustomData"/>
 </config>

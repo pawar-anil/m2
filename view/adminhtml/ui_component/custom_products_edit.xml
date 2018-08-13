@@ -16,8 +16,8 @@
         <buttons>
             <button name="save_and_continue" class="Custom\Catalog\Block\Adminhtml\Products\Edit\SaveAndContinueButton"/>
             <button name="save" class="Custom\Catalog\Block\Adminhtml\Products\Edit\SaveButton"/>
-            <button name="delete" class="Custom\Catalog\Block\Adminhtml\Products\Edit\DeleteButton"/>
             <button name="reset" class="Custom\Catalog\Block\Adminhtml\Products\Edit\ResetButton"/>
+            <button name="delete" class="Custom\Catalog\Block\Adminhtml\Products\Edit\DeleteButton"/>
             <button name="back" class="Custom\Catalog\Block\Adminhtml\Products\Edit\BackButton"/>
         </buttons>
         <namespace>custom_products_edit</namespace>
@@ -51,7 +51,20 @@
                 <item name="sortOrder" xsi:type="number">20</item>
             </item>
         </argument>
-        <field name="entity_id">
+        <field name="entity_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">products</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>entity_id</dataScope>
+            </settings>
+        </field>
+
+        <field name="product_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
@@ -59,7 +72,7 @@
                     <item name="label" xsi:type="string" translate="true">Product Id</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">products</item>
-                    <item name="dataScope" xsi:type="string">entity_id</item>
+                    <item name="dataScope" xsi:type="string">product_id</item>
                 </item>
             </argument>
         </field>

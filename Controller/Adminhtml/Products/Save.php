@@ -36,18 +36,23 @@ class Save extends Products
          $id = $this->getRequest()->getParam('entity_id');
          if ($id) {
             try {
-               $productsModel->load($id);
+              $productsModel->load($id);
             } catch (LocalizedException $e) {
                $this->messageManager->addErrorMessage(__('This Products no longer exists.'));
             return $resultRedirect->setPath('*/*/');
             }
          }
          $formData = $this->getRequest()->getPostValue();
-          print_r($formData);
-         if ($formData['entity_id']=='') {
+         //print_r($formData);
+         if ($formData['form_key']) {
+            unset($formData['form_key']);
+         }
+         if (!$formData['entity_id']) {
             unset($formData['entity_id']);
          }
-         print_r($formData);
+
+         //$formData=array('product_id'=>'4','copyright_info'=>'3','vpn'=>'3','sku'=>'3');
+         //print_r($formData);die;
          $productsModel->setData($formData);
          //print_r($productsModel->getData());die;
 

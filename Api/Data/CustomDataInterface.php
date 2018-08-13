@@ -12,7 +12,7 @@ interface CustomDataInterface extends \Magento\Framework\Api\CustomAttributesDat
 	 */
 	const ID = 'id';
 
-	const ENTITY_ID = 'entity_id';
+	const PRODUCT_ID = 'product_id';
 	const ENTITY_VPN = 'vpn';
 	const ENTITY_COPYRIGHT_INFO = 'copyright_info';
 
@@ -33,20 +33,20 @@ interface CustomDataInterface extends \Magento\Framework\Api\CustomAttributesDat
 	 */
 	public function setId($id = null);
 
-	/**
-	 * Get entityId Id.
-	 *
-	 * @return int|null
-	 */
-	public function getEntityId();
+    /**
+     * Get Product product_id
+     *
+     * @return string
+     */
+    public function getProductId();
 
-	/**
-	 * Set entityId Id.
-	 *
-	 * @param int $entityId
-	 * @return $this
-	 */
-	public function setEntityId($entityId = null);
+    /**
+     * Set Product product_id
+     *
+     * @param string $product_id
+     * @return $this
+     */
+    public function setProductId($product_id);
 
     /**
      * Get Product vpn
