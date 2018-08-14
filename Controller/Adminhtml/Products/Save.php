@@ -50,11 +50,7 @@ class Save extends Products
          if (!$formData['entity_id']) {
             unset($formData['entity_id']);
          }
-
-         //$formData=array('product_id'=>'4','copyright_info'=>'3','vpn'=>'3','sku'=>'3');
-         //print_r($formData);die;
-         $productsModel->setData($formData);
-         //print_r($productsModel->getData());die;
+         $productsModel->setData($formData);\
 
          try {
             // Save Products
