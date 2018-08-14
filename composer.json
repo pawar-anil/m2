@@ -1,5 +1,5 @@
 {
-    "name": "custom/module-catalog",
+    "name": "custom/catalog",
     "description": "Custom Catalog Module",
     "require": {
         "magento/framework": "101.0.*"
