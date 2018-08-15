@@ -50,7 +50,7 @@ class Save extends Products
          if (!$formData['entity_id']) {
             unset($formData['entity_id']);
          }
-         $productsModel->setData($formData);\
+         $productsModel->setData($formData);
 
          try {
             // Save Products
