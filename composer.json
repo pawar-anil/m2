@@ -5,17 +5,19 @@
         "magento/framework": "101.0.*"
     },
     "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-           "Custom\\Catalog\\": "src"
+    "version": "1.0.1",
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Custom/Catalog"
+            ]
+        ]
+    },
+    "authors": [
+        {
+            "name": "Anil Pawar",
+            "role": "Developer"
         }
-    }
+    ]
 }
