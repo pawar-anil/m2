@@ -61,16 +61,15 @@ class CustomRepository implements CustomRepositoryInterface
 		return $data;
 	}
 
-	public function get($id){
-		if(!$this->_objectManager->create('Custom\Catalog\Model\Products')->load($id)->getData()){
-			throw new InputException(__("Invalid ID provided",$id));
+	public function get($vpn){
+		$products = $this->_objectManager->create('Custom\Catalog\Model\ResourceModel\Products\Collection')->addFieldToFilter('vpn',$vpn);
+
+		if(count($products)){
+			return $products->getData();
 		}
 		else{
-			$modelData=$this->_objectManager->create('Custom\Catalog\Model\Products')->load($id)->getData();
+			throw new InputException(__("VPN Not Found",$vpn));
 		}
-		$result=array();
-		$result[]=$modelData;
-		return $result;
 	}
 
 }
