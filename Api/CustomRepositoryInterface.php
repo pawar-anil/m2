@@ -16,7 +16,7 @@ interface CustomRepositoryInterface
 	/**
 	 * Get custom Api.
 	 *
-	 * @param int $id
+	 * @param string $id
 	 * @return \Custom\Catalog\Api\Data\CustomDataInterface
 	 * @throws \Magento\Framework\Exception\LocalizedException
 	 */
